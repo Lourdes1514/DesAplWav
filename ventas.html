@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Ventas del Empleado</title>
+		<script type="text/javascript">
+			var empleado = function(){
+				var venta = parseFloat(document.getElementById('venta').value);
+				var comision = 0;
+				if (venta <= 150){
+					document.getElementById('comision').value = 0;
+					} else if (venta>150 && venta<=400) {
+					document.getElementById('comision').value = 0.1*venta;
+					} else {
+					document.getElementById('comision').value = 50 + 0.09*venta;
+					}
+				}
+		</script>
+</head>
+	<body>
+	<form>
+		<p>Venta: <input type="text" id="venta" size="20"></p>
+		<p><input type="button" value="Comision" onClick="empleado()">
+		<p>Comision: <input type="text" id="comision" disabled="disabled"></p>
+	</form>
+</body>
+</html>
